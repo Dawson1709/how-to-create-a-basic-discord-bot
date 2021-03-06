@@ -1,0 +1,16 @@
+#first we have to import discord
+
+import discord
+#then I imported os because I put my bots private token in a different .env file but if you are doing this in a way that you know no one will see this you don't
+#have to import os and where it says token you can just paste your bots token there.
+import os 
+
+client = discord.Client()
+#this tells us when we have sucesfully logged into our bot and took it online.
+@client.event
+async def on_ready():
+  print('We have logged on as {0.user}'.format(client))
+
+  
+#this runs the code
+client.run(os.getenv('TOKEN'))
